@@ -6,7 +6,7 @@ void initialisation_matriceJeu(struct Tuile mains_joueurs[][6],int nb,struct Tui
 {
     int i;
 
-    for(i=0;i<nb;i++)
+    for(i=0; i<nb; i++)
     {
         initialisation_main(mains_joueurs,i,pioche);
 
@@ -17,9 +17,9 @@ void initialisation_matriceJeu(struct Tuile mains_joueurs[][6],int nb,struct Tui
 void affichage_matriceJeu(struct Tuile mains_joueurs[][6],int nb)
 {
     int i,j;
-    for(i=0;i<nb;i++)
+    for(i=0; i<nb; i++)
     {
-        for(j=0;j<6;j++)
+        for(j=0; j<6; j++)
         {
             printf("%c%d ",mains_joueurs[i][j]);
         }
@@ -30,14 +30,15 @@ void piocher(struct Tuile mains_joueurs[][6],struct Tuile pioche[108], int numer
 {
     int i,carte_pioche;
 
-    for(i=0;i<6;i++)
+    for(i=0; i<6; i++)
     {
         if((mains_joueurs[numero_joueur-1][i].forme=='p')&&(mains_joueurs[numero_joueur-1][i].couleur==0))//si l'utilisaeur n'a pas 6 tuiles
         {
             do
             {
                 carte_pioche=rand()%(108-0);
-            }while((pioche[carte_pioche].forme=='p')&&(pioche[carte_pioche].couleur==0));
+            }
+            while((pioche[carte_pioche].forme=='p')&&(pioche[carte_pioche].couleur==0));
 
             mains_joueurs[numero_joueur-1][i]=pioche[carte_pioche];
             pioche[carte_pioche].forme='p';
@@ -63,7 +64,7 @@ void poser_tuile(int numero_joueur,struct Tuile mains_joueurs[][6],struct Tuile 
     printf("Quelle couleur ?\n");
     scanf(" %d",&couleur);
 
-    for(i=0;i<6;i++)
+    for(i=0; i<6; i++)
     {
         if((mains_joueurs[numero_joueur-1][i].forme==forme)&&(mains_joueurs[numero_joueur-1][i].couleur==couleur))
         {
@@ -72,11 +73,11 @@ void poser_tuile(int numero_joueur,struct Tuile mains_joueurs[][6],struct Tuile 
             scanf (" %c",&position_x);
             scanf (" %c",&position_y);
 
-            for(j=0;j<27;j++)
+            for(j=0; j<27; j++)
             {
                 if(plateau[0][j].forme==position_x)
                 {
-                    for (k=0;k<13;k++)
+                    for (k=0; k<13; k++)
                     {
                         if(plateau[k][0].forme==position_y)
                         {
@@ -94,10 +95,254 @@ void poser_tuile(int numero_joueur,struct Tuile mains_joueurs[][6],struct Tuile 
             }
 
         }
-        if((i==5)&&(mains_joueurs[numero_joueur-1][i].forme=='p')&&(mains_joueurs[numero_joueur-1][i].couleur==0))
+        if((i==5)&&(mains_joueurs[numero_joueur-1][i].forme!='p')&&(mains_joueurs[numero_joueur-1][i].couleur!=0))
         {
             printf("vous n'avez pas cette tuile\n");
         }
     }
 }
 
+void affichage_mainJ(struct Tuile mains_joueurs[][6],int numero_joueur)
+{
+    int i;
+
+    for(i=0; i<6; i++)
+    {
+        if(mains_joueurs[numero_joueur-1][i].forme=='a')
+        {
+            if(mains_joueurs[numero_joueur-1][i].couleur==1)
+            {
+                Color(3,0);
+                printf(" %c ",0x03);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==2)
+            {
+                Color(4,0);
+                printf(" %c ",0x03);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==3)
+            {
+                Color(5,0);
+                printf(" %c ",0x03);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==4)
+            {
+                Color(6,0);
+                printf(" %c ",0x03);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==5)
+            {
+                Color(7,0);
+                printf(" %c ",0x03);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==6)
+            {
+                Color(8,0);
+                printf(" %c ",0x03);
+                Color(15,0);
+            }
+        }
+        if(mains_joueurs[numero_joueur-1][i].forme=='b')
+        {
+            if(mains_joueurs[numero_joueur-1][i].couleur==1)
+            {
+                Color(3,0);
+                printf(" %c ",0x04);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==2)
+            {
+                Color(4,0);
+                printf(" %c ",0x04);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==3)
+            {
+                Color(5,0);
+                printf(" %c ",0x04);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==4)
+            {
+                Color(6,0);
+                printf(" %c ",0x04);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==5)
+            {
+                Color(7,0);
+                printf(" %c ",0x04);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==6)
+            {
+                Color(8,0);
+                printf(" %c ",0x04);
+                Color(15,0);
+            }
+        }
+        if(mains_joueurs[numero_joueur-1][i].forme=='c')
+        {
+            if(mains_joueurs[numero_joueur-1][i].couleur==1)
+            {
+                Color(3,0);
+                printf(" %c ",0x05);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==2)
+            {
+                Color(4,0);
+                printf(" %c ",0x05);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==3)
+            {
+                Color(5,0);
+                printf(" %c ",0x05);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==4)
+            {
+                Color(6,0);
+                printf(" %c ",0x05);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==5)
+            {
+                Color(7,0);
+                printf(" %c ",0x05);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==6)
+            {
+                Color(8,0);
+                printf(" %c ",0x05);
+                Color(15,0);
+            }
+        }
+        if(mains_joueurs[numero_joueur-1][i].forme=='d')
+        {
+            if(mains_joueurs[numero_joueur-1][i].couleur==1)
+            {
+                Color(3,0);
+                printf(" %c ",0x06);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==2)
+            {
+                Color(4,0);
+                printf(" %c ",0x06);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==3)
+            {
+                Color(5,0);
+                printf(" %c ",0x06);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==4)
+            {
+                Color(6,0);
+                printf(" %c ",0x06);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==5)
+            {
+                Color(7,0);
+                printf(" %c ",0x06);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==6)
+            {
+                Color(8,0);
+                printf(" %c ",0x06);
+                Color(15,0);
+            }
+        }
+        if(mains_joueurs[numero_joueur-1][i].forme=='e')
+        {
+            if(mains_joueurs[numero_joueur-1][i].couleur==1)
+            {
+                Color(3,0);
+                printf(" %c ",0xDB);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==2)
+            {
+                Color(4,0);
+                printf(" %c ",0xDB);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==3)
+            {
+                Color(5,0);
+                printf(" %c ",0xDB);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==4)
+            {
+                Color(6,0);
+                printf(" %c ",0xDB);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==5)
+            {
+                Color(7,0);
+                printf(" %c ",0xDB);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==6)
+            {
+                Color(8,0);
+                printf(" %c ",0xDB);
+                Color(15,0);
+            }
+        }
+        if(mains_joueurs[numero_joueur-1][i].forme=='f')
+        {
+            if(mains_joueurs[numero_joueur-1][i].couleur==1)
+            {
+                Color(3,0);
+                printf(" %c ",0x1F);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==2)
+            {
+                Color(4,0);
+                printf(" %c ",0x1F);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==3)
+            {
+                Color(5,0);
+                printf(" %c ",0x1F);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==4)
+            {
+                Color(6,0);
+                printf(" %c ",0x1F);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==5)
+            {
+                Color(7,0);
+                printf(" %c ",0x1F);
+                Color(15,0);
+            }
+            if(mains_joueurs[numero_joueur-1][i].couleur==6)
+            {
+                Color(8,0);
+                printf(" %c ",0x1F);
+                Color(15,0);
+            }
+        }
+
+    }
+    printf("\n");
+}
