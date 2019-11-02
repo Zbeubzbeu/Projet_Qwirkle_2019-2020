@@ -43,6 +43,7 @@ void affichage_menu()
         {
         case 1://choix menu Nouvelle partie
         {
+            char choix_menu1;
             int nb;
             int i;
             struct Tuile pioche[108];
@@ -75,17 +76,29 @@ void affichage_menu()
             initialisation_pioche(pioche);
             initialisation_matriceJeu(mains_joueurs,nb,pioche);
             initialisation_plateau(plateau);
-            affichage_plateau(plateau);
 
-            for(i=1;i<nb;i++)
+            //affichage_pioche(pioche);
+            //affichage_matriceJeu(mains_joueurs,nb);
+            printf("%c",0x04);
+            printf("%c",0x03);
+            printf("%c",0x05);
+            printf("%c",0x06);
+            printf("%c",0xDB);
+            printf("%c",0xDB);
+
+            do
             {
+            for(i=1;i<=nb;i++)
+            {
+                affichage_plateau(plateau);
+                affichage_mainJ(mains_joueurs,i);
                 menu_joueur(i,mains_joueurs,pioche,plateau);
+                affichage_plateau(plateau);
 
             }
-
-            affichage_matriceJeu(mains_joueurs,nb);
-            affichage_pioche(pioche);
-            affichage_plateau(plateau);
+            printf("Voulez-vous continuer a jouer ?\n");
+            scanf(" %c",&choix_menu1);
+            }while(choix_menu1!='Q');
 
             break;
         }

@@ -47,3 +47,58 @@
 	"Menu.h"
 	"Plateau.h"
 
+1571836658 source:c:\users\jules\work\repos\projet_qwirkle_2019-2020\couleur.c
+	"Couleur.h"
+	<windows.h>
+
+1571836658 c:\users\jules\work\repos\projet_qwirkle_2019-2020\couleur.h
+
+1572714156 source:c:\users\jules\work\repos\projet_qwirkle_2019-2020\joueur.c
+	"Joueur.h"
+	"Menu.h"
+	"Plateau.h"
+
+1572624430 c:\users\jules\work\repos\projet_qwirkle_2019-2020\joueur.h
+	<stdlib.h>
+	<stdio.h>
+	"time.h"
+	<windows.h>
+	"Plateau.h"
+	"Menu.h"
+	"Couleur.h"
+
+1572706215 c:\users\jules\work\repos\projet_qwirkle_2019-2020\plateau.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"Couleur.h"
+	"Tuile.h"
+	"Joueur.h"
+
+1571921357 c:\users\jules\work\repos\projet_qwirkle_2019-2020\tuile.h
+
+1572627206 c:\users\jules\work\repos\projet_qwirkle_2019-2020\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"Couleur.h"
+	"Plateau.h"
+	"Tuile.h"
+	"Joueur.h"
+
+1572548243 source:c:\users\jules\work\repos\projet_qwirkle_2019-2020\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"Menu.h"
+	"Couleur.h"
+	"Plateau.h"
+	"Tuile.h"
+	"time.h"
+
+1572715159 source:c:\users\jules\work\repos\projet_qwirkle_2019-2020\menu.c
+	"Menu.h"
+
+1572709638 source:c:\users\jules\work\repos\projet_qwirkle_2019-2020\plateau.c
+	"Plateau.h"
+
